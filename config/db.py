@@ -18,6 +18,7 @@ def init_db(app):
     app.config["MYSQL_PASSWORD"] = os.getenv("DB_PASSWORD")
     app.config["MYSQL_DB"] = os.getenv("DB_NAME")
     app.config["MYSQL_PORT"] = int(os.getenv("DB_PORT"))
+    app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET")
 
     # Inicializamos la conexion
     mysql.init_app(app)
